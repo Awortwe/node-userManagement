@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const db = require('./data/database');
 
 const userRoutes = require('./routes/users');
 
@@ -14,4 +15,8 @@ app.use(express.static('public'));
 app.use('/images', express.static('images'));
 app.use(userRoutes);
 
-app.listen(3000);
+db.connectToDatabase().then(function(){
+    app.listen(3000);
+})
+
+
