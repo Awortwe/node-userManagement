@@ -8,6 +8,10 @@ router.get('/', function(req,res){
 
 router.get('/users', function(req,res){
     res.render('users-list');
-})
+});
+
+router.get('/create-users', function(req,res){
+    res.render('create-users');
+});
 
 module.exports = router;
